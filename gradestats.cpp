@@ -2,20 +2,27 @@
 #include <vector>
 
 int main(){
+  // initialize an integer to store grade input
   int grade;
-  std::vector<int> gradesArray;
-  int count = 1;
+  
+  // initialize a vector
+  std::vector<int> gradesVector;
 
-  while(grade != -1){
+  // loop to read user data 100 times
+  for (int i = 0; i < 100; i++){
     std::cout << "Enter grade (or -1 to end): "; 
     std::cin >> grade;
-    
-    gradesArray.push_back(count);
 
-    gradesArray[count - 1] = grade;
-    
-    count++;
+    // end the loop if the user chose so
+    if (grade == -1)
+      break;
+
+    // increase vector length by 1
+    gradesVector.push_back(i + 1);
+
+    // add the grade to the vector
+    gradesVector[i] = grade;
   }
-
+  
   return 0; 
 }
