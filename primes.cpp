@@ -8,12 +8,15 @@ int main(){
 
   // used to pass on if a numbers is prime
   bool isPrime = false;
-  std::cout << "Primes to " << userInput << " are: 2 ";
+  // declare and initialise first prime number
+  int firstPrime = 2;
+  std::cout << "Primes to " << userInput << " are: " << firstPrime << " ";
   // from i to userInput inclusive, test all numbers
-  for (int i = 3; i <= userInput; i++){
+  // where i is the next number after firstPrime
+  for (int i = firstPrime + 1; i <= userInput; i++){
 
-    // check if is prime
-    for(int j = 2; j < i; j++)
+    // check if i is prime, where j starts with firstPrime
+    for(int j = firstPrime; j < i; j++)
       if (i % j != 0)
 	isPrime = true;
     // if a divisor found, break loop
